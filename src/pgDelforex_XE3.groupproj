@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{DAAD8C83-3E3B-4841-AFD2-8BDF131E8145}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DelForEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\SetupEx\SetupEx.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DelForEx">
+        <MSBuild Projects="DelForEx.dproj"/>
+    </Target>
+    <Target Name="DelForEx:Clean">
+        <MSBuild Projects="DelForEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DelForEx:Make">
+        <MSBuild Projects="DelForEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SetupEx">
+        <MSBuild Projects="..\SetupEx\SetupEx.dproj"/>
+    </Target>
+    <Target Name="SetupEx:Clean">
+        <MSBuild Projects="..\SetupEx\SetupEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SetupEx:Make">
+        <MSBuild Projects="..\SetupEx\SetupEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DelForEx;SetupEx"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DelForEx:Clean;SetupEx:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DelForEx:Make;SetupEx:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

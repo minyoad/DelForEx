@@ -1,0 +1,96 @@
+object DelExpertDlg: TDelExpertDlg
+  Left = 248
+  Top = 316
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Delphi 源码格式化 2.5.2'
+  ClientHeight = 144
+  ClientWidth = 262
+  Color = clBtnFace
+  Font.Charset = GB2312_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = '宋体'
+  Font.Style = []
+  OldCreateOrder = True
+  Position = poScreenCenter
+  ShowHint = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  DesignSize = (
+    262
+    144)
+  PixelsPerInch = 96
+  TextHeight = 12
+  object OptionsButton: TButton
+    Left = 176
+    Top = 32
+    Width = 75
+    Height = 25
+    Hint = '自定义选项'
+    Anchors = [akTop, akRight]
+    Caption = '选项(&O)'
+    TabOrder = 0
+    OnClick = OptionsButtonClick
+  end
+  object CancelBtn: TButton
+    Left = 176
+    Top = 64
+    Width = 75
+    Height = 25
+    Anchors = [akTop, akRight]
+    Cancel = True
+    Caption = '关闭(&L)'
+    ModalResult = 2
+    ParentShowHint = False
+    ShowHint = False
+    TabOrder = 1
+  end
+  object HelpBtn: TButton
+    Left = 176
+    Top = 96
+    Width = 75
+    Height = 25
+    Anchors = [akTop, akRight]
+    Caption = '帮助(&H)'
+    TabOrder = 2
+    OnClick = HelpBtnClick
+  end
+  object GroupBox1: TGroupBox
+    Left = 8
+    Top = 8
+    Width = 153
+    Height = 129
+    Caption = '请选择格式化文件'
+    TabOrder = 3
+    object CurrentBtn: TButton
+      Left = 16
+      Top = 24
+      Width = 120
+      Height = 25
+      Caption = '当前文件(&C)'
+      TabOrder = 0
+      OnClick = CurrentBtnClick
+    end
+    object AllButton: TButton
+      Left = 16
+      Top = 56
+      Width = 120
+      Height = 25
+      Caption = '所有打开的文件(&A)'
+      TabOrder = 1
+      OnClick = AllButtonClick
+    end
+    object WholeProjBtn: TButton
+      Left = 16
+      Top = 88
+      Width = 120
+      Height = 25
+      Caption = '整个工程(&W)'
+      TabOrder = 2
+      OnClick = WholeProjBtnClick
+    end
+  end
+end

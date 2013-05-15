@@ -1,0 +1,57 @@
+object ProgressDlg: TProgressDlg
+  Left = 279
+  Top = 277
+  BorderStyle = bsToolWindow
+  Caption = '进度'
+  ClientHeight = 149
+  ClientWidth = 308
+  Color = clBtnFace
+  Font.Charset = GB2312_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = '宋体'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  OldCreateOrder = True
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 12
+  object Bevel1: TBevel
+    Left = 8
+    Top = 9
+    Width = 294
+    Height = 96
+    Shape = bsFrame
+  end
+  object Label1: TLabel
+    Left = 27
+    Top = 26
+    Width = 66
+    Height = 12
+    Caption = '正在格式化: '
+  end
+  object FileLabel: TLabel
+    Left = 27
+    Top = 48
+    Width = 254
+    Height = 12
+    AutoSize = False
+  end
+  object CancelBtn: TButton
+    Left = 118
+    Top = 118
+    Width = 74
+    Height = 21
+    Cancel = True
+    Caption = '取消(&C)'
+    TabOrder = 0
+    OnClick = CancelBtnClick
+  end
+  object ProgressBar: TProgressBar
+    Left = 26
+    Top = 71
+    Width = 255
+    Height = 11
+    TabOrder = 1
+  end
+end
